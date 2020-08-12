@@ -24,9 +24,53 @@ Desenvolvimento de aplicações com backend com Node.js.
 
 ## Descrição do Projeto
 
-# FourFood
+## Documentação
 
-https://documenter.getpostman.com/view/7549981/SWTEdGtT?version=latest
+[Postman](https://documenter.getpostman.com/view/7549981/SWTEdGtT?version=latest)
 
+## Zeplin
 https://app.zeplin.io/project/5dd5ab8e5fb2a0060f81698f/screen/5dd5abba220169bb6d3a81f0
 
+## Deploy
+
+<p align="justify">
+  O deploy do projeto foi realizado no firebase e encontra-se disponivel em: 
+</p>
+
+## Pré-requisitos
+
+:warning: [Node](https://nodejs.org/en/download/)
+
+:warning: [Npm](https://www.npmjs.com/)
+
+## Como rodar a aplicação :arrow_forward:
+
+No terminal, clone o projeto: 
+
+```
+git clone https://github.com/Erika-Skarda/Spotenu.git
+```
+Entre no projeto e instale as dependências através do comando:
+```
+npm install
+```
+Por último, suba a aplicação: 
+```
+npm start
+```
+## Acessos:
+
+## Linguagens, dependencias e libs utilizadas :books:
+
+- [Node](https://nodejs.org/en/)
+- [React](https://pt-br.reactjs.org/)
+- [Redux](https://redux.js.org/)
+- [Styled Components](https://styled-components.com/)
+- [Axios](https://alligator.io/react/axios-react/)
+- [Material ui](https://material-ui.com/pt/)
+- [AWS](https://firebase.google.com/)
+
+## Desenvolvido Por :octocat:
+
+| [Likedin](https://www.linkedin.com/in/erika-skarda-99915488/) | 
+| :---: |
