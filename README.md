@@ -1,5 +1,4 @@
 #  <img  width='30' src='https://uploads-ssl.webflow.com/5e790d30d198385b09366d8f/5efbb5055f2478ba2bc322d0_icone_gif.gif'> Labenu | Full-Stack Web Development Bootcamp
-Desenvolvimento de aplicações com backend com Node.js.
 
  <p align="center">
   <img src="https://i.imgur.com/xUhQLtc.png"/>
@@ -29,6 +28,7 @@ Desenvolvimento de aplicações com backend com Node.js.
 [Postman](https://documenter.getpostman.com/view/7549981/SWTEdGtT?version=latest)
 
 ## Zeplin
+
 https://app.zeplin.io/project/5dd5ab8e5fb2a0060f81698f/screen/5dd5abba220169bb6d3a81f0
 
 ## Deploy
@@ -68,6 +68,7 @@ npm start
 - [Styled Components](https://styled-components.com/)
 - [Axios](https://alligator.io/react/axios-react/)
 - [Material ui](https://material-ui.com/pt/)
+- [Typescript](https://www.typescriptlang.org/)
 - [AWS](https://firebase.google.com/)
 
 ## Desenvolvido Por :octocat:
