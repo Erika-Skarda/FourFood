@@ -7,7 +7,7 @@
 ## Frontend do Projeto Spotenu
 
  <p align="center" >
-  <img width="20%" src="https://i.imgur.com/MagoMtL.png" />
+  <img width="20%" src="https://cdn.zeplin.io/5dd5ab8e5fb2a0060f81698f/assets/2420CEFD-BBDE-49C8-91E3-A49B116851E9.svg" />
 </p>
 
 <p align="center">
