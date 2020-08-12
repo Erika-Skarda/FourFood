@@ -1,10 +1,11 @@
-# Labenu | Desenvolvimento Web Full Stack
+#  <img  width='30' src='https://uploads-ssl.webflow.com/5e790d30d198385b09366d8f/5efbb5055f2478ba2bc322d0_icone_gif.gif'> Labenu | Full-Stack Web Development Bootcamp
+Desenvolvimento de aplicações com backend com Node.js.
 
  <p align="center">
   <img src="https://i.imgur.com/xUhQLtc.png"/>
 </p>
 
-## Frontend do Projeto Spotenu
+## Projeto FourFood
 
  <p align="center" >
   <img width="20%" src="https://cdn.zeplin.io/5dd5ab8e5fb2a0060f81698f/assets/2420CEFD-BBDE-49C8-91E3-A49B116851E9.svg" />
