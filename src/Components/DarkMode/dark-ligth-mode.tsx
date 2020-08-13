@@ -28,15 +28,15 @@ function DarkMode() {
         <Title>{theme} mode</Title>
         <SwitchButton onClick={() => toggleTheme()}>
           {theme === "dark" ? (
-            <img src={require("https://cdn.icon-icons.com/icons2/1493/PNG/512/sun_102839.png")} />
+            <img src="https://cdn.icon-icons.com/icons2/1493/PNG/512/sun_102839.png" />
           ) : (
-            <img src="./assets/moon.svg" />
+            <img src="https://cdn.icon-icons.com/icons2/1448/PNG/512/42638waxingcrescentmoon_99014.png" />
           )}
         </SwitchButton>
         <Subtitle className="mt-4">
           by:
           <User
-            href="https://cdn.icon-icons.com/icons2/1448/PNG/512/42638waxingcrescentmoon_99014.png"
+            href=""
             target="_blank"
             className="ml-2"
           >

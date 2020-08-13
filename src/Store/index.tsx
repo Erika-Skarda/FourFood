@@ -1,21 +1,24 @@
-import React from "react";
-import { Provider } from "react-redux";
-import thunk from "redux-thunk";
-import {
-  // MuiThemeProvider,
-  //createGenerateClassName,
-  //jssPreset,
-  CssBaseline
-} from "@material-ui/core";
-////import JssProvider from "react-jss/lib/JssProvider";
-//import { create } from "jss";
-import Router from "../Containers/Router/index";
-import { createBrowserHistory } from "history";
-import { createStore, applyMiddleware, compose } from "redux";
-import { generateReducers } from "../Reducers/index";
+import { createStore, applyMiddleware} from "redux";
+import { generateReducers } from "./Modules/rootReducer";
 import { routerMiddleware } from "connected-react-router";
-import { theme, GlobalStyle, AppWrapper } from "../../Style/theme";
-import { ThemeProvider } from "styled-components";
+import thunk from 'redux-thunk';
+import   { createBrowserHistory }  from "history";
+
+export const history =  createBrowserHistory()
+export const store = createStore(generateReducers(history), applyMiddleware(thunk))
+
+
+// export default function configureStore(
+//   history: History,
+//   initialState: ApplicationState
+// ): Store<ApplicationState> {
+//   const store = createStore(
+//     generateReducers(history),
+//     initialState,
+//     applyMiddleware(routerMiddleware(history), thunk)
+//   );
+//   return store;
+// }
 
 // const generateClassName = createGenerateClassName();
 // const jss = create({
@@ -24,28 +27,16 @@ import { ThemeProvider } from "styled-components";
 //   insertionPoint: document.getElementById("jss-insertion-point")
 // });
 
-export const history = createBrowserHistory();
 
-const middlewares = [
-  applyMiddleware(routerMiddleware(history), thunk),
-  window.__REDUX_DEVTOOLS_EXTENSION__
-    ? window.__REDUX_DEVTOOLS_EXTENSION__()
-    : f => f
-];
 
-const store = createStore(generateReducers(history), compose(...middlewares));
+// export const history = createBrowserHistory();
 
-const App = () => (
+// const middlewares = [
+//   applyMiddleware(routerMiddleware(history), thunk),
+//   window.__REDUX_DEVTOOLS_EXTENSION__
+//     ? window.__REDUX_DEVTOOLS_EXTENSION__()
+//     : f => f
+// ];
 
-  <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <CssBaseline />
-        <AppWrapper>
-          <Router history={history} />
-        </AppWrapper>
-      </ThemeProvider>
-  </Provider>
-);
+// const store = createStore(generateReducers(history), compose(...middlewares));
 
-export default App;
