@@ -1,13 +1,31 @@
-import React, { Fragment } from 'react';
-import DarkMode from "./Components/DarkMode/dark-ligth-mode"
-import './App.css';
+import React from "react";
+import { Provider } from "react-redux";
+import { ThemeProvider } from "styled-components";
+import thunk from "redux-thunk";
+import Router from "../src/Containers/Router/index";
+import {
+   MuiThemeProvider,
+  //createGenerateClassName,
+  //jssPreset,
+  CssBaseline
+} from "@material-ui/core";
+import { GlobalStyle, AppWrapper } from "./Styles/globals";
+import  theme  from './Styles/theme'
+import {store, history} from './Store';
+import { BrowserRouter } from "react-router-dom";
 
-function App() {
-  return (
-    <Fragment>
-      < DarkMode />
-    </Fragment>
-  );
-}
+const App:React.FC = () => (
+
+  <Provider store={store}>
+      <MuiThemeProvider theme={theme}>
+        <GlobalStyle />
+        <CssBaseline />
+        <BrowserRouter />
+        <AppWrapper>
+          <Router history={history} />
+        </AppWrapper>
+      </MuiThemeProvider>
+  </Provider>
+);
 
 export default App;

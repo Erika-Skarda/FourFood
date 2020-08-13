@@ -8,27 +8,26 @@ interface Props {
     theme: string;
 }
 
-export  const GlobalStyle = createGlobalStyle(
+export const GlobalStyle = createGlobalStyle(
 
     (props: Props) => css`
         :root {
             --color-dark: hsl(0, 0%, 10%);
             --color-light: hsl(0, 0%, 95%);
+            --red: "#e8222e";
         }
 
         body {
-        background-color: ${props.theme === "light"
+        /* background-color: ${props.theme === "light"
             ? "var(--color-light)"
             : "var(--color-dark)"};
         color: ${props.theme === "light"
             ? "var(--color-dark)"
-            : "var(--color-light)"};
-            margin: 0;
-            padding: 0;
-            font-family:'Roboto', sans-serif;
-        
-            
-            transition: all 0.25s linear;
+            : "var(--color-light)"}; */
+        transition: all 0.25s linear;
+        margin: 0;
+        padding: 0;
+        font-family:'Roboto', sans-serif;
         }
         
     
@@ -40,15 +39,9 @@ export  const GlobalStyle = createGlobalStyle(
     };
     
     @font-face {
-        font-family: 'Roboto', sans-serif;;
+        font-family: 'Roboto', sans-serif;
         @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
     }
-    
-    
-    body {
-        
-    };
-    
     
     button {
         cursor: pointer;
@@ -57,4 +50,9 @@ export  const GlobalStyle = createGlobalStyle(
     `,
 );
   
-  
+export const AppWrapper = styled.div`
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+`;

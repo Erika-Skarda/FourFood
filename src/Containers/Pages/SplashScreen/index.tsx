@@ -1,43 +1,35 @@
-import React, { Component, Fragment } from "react"
-import { connect } from"react-redux"
-import { push } from "connected-react-router";
-import { routes } from "../../Router/index";
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import { push } from 'connected-react-router';
+import { bindActionCreators, Dispatch, AnyAction } from 'redux';
+import * as UserAction from '../../../Actions/actions';
 import Fade from '@material-ui/core/Fade';
-import styled from 'styled-components'
+import { WrapperSplashScreen } from './styled';
 
-const WrapperSplashScreen = styled.div `
-    background-color:#e8222e;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-`
-class SplashScreen extends React.Component {
-
-    componentDidMount() {
-
-        window.setTimeout(this.props.goToLogin, 3000);
-    }
-
-render() {
-   
-    return (
-     <Fragment>
-         <Fade in={true} timeout={1000}>
-             <WrapperSplashScreen>
-                   <img src={require( '../../../Assets/Images/logo_branca.svg')} 
-                        alt="logo da FourFood" 
-                     />
-             </WrapperSplashScreen>
-         </Fade>
-     </Fragment>
-    )
+interface SplashScreenProps {
+  redirectLogin: () => void;
 }
-} 
- const mapDispatchToProps = (dispatch: (arg0: import("connected-react-router").CallHistoryMethodAction<[any]>) => any) => ({
-   
-     goToLogin: () => dispatch(push(routes.login)),
-   
- })
+const SplashScreen: React.FC<SplashScreenProps> = (props) => {
 
+  const componentDidMount = () => {
+    window.setTimeout(props.redirectLogin, 3000);
+  };
 
- export default connect(mapDispatchToProps, null)(SplashScreen)
+  return (
+    <Fragment>
+      <Fade in timeout={1000}>
+        <WrapperSplashScreen>
+          <img
+            src={require('../../../Assets/Images/logo_branca.svg')}
+            alt="logo da FourFood"
+          />
+        </WrapperSplashScreen>
+      </Fade>
+    </Fragment>
+  );
+};
+
+const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => {
+  bindActionCreators(UserAction, dispatch);
+};
+export default connect(mapDispatchToProps, null)(SplashScreen);
