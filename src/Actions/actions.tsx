@@ -4,9 +4,10 @@ import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { baseUrl, getToken} from "../Utils/constants"
 import axios from 'axios';
-import { setMessage } from "./index";
 
 
+
+//Redirecionamentos
 export const redirectLogin = () => async (
   dispatch: (
     arg0: import("connected-react-router").CallHistoryMethodAction<[any]>
@@ -14,6 +15,17 @@ export const redirectLogin = () => async (
 ) => {
   try {
     dispatch(push(routes.login));
+  } catch (err) {
+    alert("Erro no redirecionamento");
+  }
+};
+export const redirectSignUp = () => async (
+  dispatch: (
+    arg0: import("connected-react-router").CallHistoryMethodAction<[any]>
+  ) => void
+) => {
+  try {
+    dispatch(push(routes.signup));
   } catch (err) {
     alert("Erro no redirecionamento");
   }

@@ -1,6 +1,12 @@
 import { createMuiTheme } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 
+export const theme = {
+  
+ lipstick: "#e8222e"
+ 
+}
+
 export const lightTheme = {
     background: "#f6f8fd",
     text: "#151620",
@@ -11,7 +17,7 @@ export const lightTheme = {
     text: "#f6f8fd",
   };
 
-
+//Depois tentar inserir
 export default createMuiTheme(
   {
     "palette":
@@ -21,9 +27,9 @@ export default createMuiTheme(
         "white": "#fff"
       },
       "background": {
-        "paper": "#fff",
-        "default": "#e8222e"
-      },
+      
+        "default": "white"
+      },      
       "primary": {
         "light": "rgba(44, 94, 146, 0.74)",
         "main": "rgba(44, 94, 146, 1)",

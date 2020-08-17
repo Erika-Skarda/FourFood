@@ -1,7 +1,4 @@
-import styled, { createGlobalStyle,
-                 DefaultTheme,
-                 css,
-                 keyframes} from "styled-components";
+import styled, { createGlobalStyle, css} from "styled-components";
 
 
 interface Props {
@@ -12,23 +9,29 @@ export const GlobalStyle = createGlobalStyle(
 
     (props: Props) => css`
         :root {
+            
             --color-dark: hsl(0, 0%, 10%);
             --color-light: hsl(0, 0%, 95%);
-            --red: "#e8222e";
+            --black: "black";
+            --lipstick: "#e8222e";
+           
         }
 
         body {
-        /* background-color: ${props.theme === "light"
-            ? "var(--color-light)"
-            : "var(--color-dark)"};
-        color: ${props.theme === "light"
-            ? "var(--color-dark)"
-            : "var(--color-light)"}; */
-        transition: all 0.25s linear;
+    
+        /* transition: all 0.25s linear; */
         margin: 0;
         padding: 0;
         font-family:'Roboto', sans-serif;
+
         }
+        html, border-style, #root {
+        max-height: 100vh;
+        max-width: 100vw;
+
+        width: 100%;
+        height: 100%;
+    }
         
     
     *{

@@ -1,35 +1,34 @@
-import React, { Fragment } from 'react';
-import { connect } from 'react-redux';
-import { push } from 'connected-react-router';
-import { bindActionCreators, Dispatch, AnyAction } from 'redux';
-import * as UserAction from '../../../Actions/actions';
-import Fade from '@material-ui/core/Fade';
+import React, { Fragment, useEffect } from 'react';
+import { useDispatch  } from 'react-redux';
+import { push} from 'connected-react-router';
 import { WrapperSplashScreen } from './styled';
 
-interface SplashScreenProps {
-  redirectLogin: () => void;
-}
-const SplashScreen: React.FC<SplashScreenProps> = (props) => {
+function SplashScreen() {
 
-  const componentDidMount = () => {
-    window.setTimeout(props.redirectLogin, 3000);
-  };
+  let dispatch = useDispatch()
+
+  useEffect(() => {
+    setTimeout(() => dispatch(push("/login")), 3000);
+    // const timer = setTimeout(() => {
+    //   console.log("vai arrombado")
+    //   dispatch(push("/login"))
+    // }, 1000)
+    // return () => clearTimeout(timer)
+
+  }, []);
 
   return (
     <Fragment>
-      <Fade in timeout={1000}>
+    
         <WrapperSplashScreen>
           <img
             src={require('../../../Assets/Images/logo_branca.svg')}
             alt="logo da FourFood"
           />
         </WrapperSplashScreen>
-      </Fade>
+     
     </Fragment>
   );
 };
 
-const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => {
-  bindActionCreators(UserAction, dispatch);
-};
-export default connect(mapDispatchToProps, null)(SplashScreen);
+export default SplashScreen
