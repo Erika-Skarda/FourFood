@@ -21,12 +21,13 @@ const App:React.FC = () => (
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <CssBaseline />
-        {/* <BrowserRouter /> */}
+        {/* <BrowserRouter />  */}
         <AppWrapper>
           <Router history={history} />
         </AppWrapper>
       </ThemeProvider>
   </Provider>
+  
 );
 
 export default App;
