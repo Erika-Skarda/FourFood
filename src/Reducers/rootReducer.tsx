@@ -9,5 +9,4 @@ export const generateReducers = (history: History<any>) =>
     
     router: connectRouter(history)
   
-  
   });

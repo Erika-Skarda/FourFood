@@ -4,17 +4,16 @@ import { connect, useDispatch } from 'react-redux';
 import { Push, push } from 'connected-react-router';
 import { useHistory } from "react-router-dom";
 
-import { bindActionCreators, Dispatch, AnyAction } from 'redux';
-import * as UserAction from '../../../Actions/actions';
+import {Dispatch } from 'redux';
 import { routes } from "../../../Containers/Router";
 //Estilização
 import { DivTitle } from "./styled";
 import Section from "../../../Components/HeaderInput";
-import {Container, Form, TextFieldStyled, SectionTitle } from "../../../Components/HeaderInput/styled"
-import Button from "../../../Components/Button"
+import {Container, Form, TextFieldStyled, SectionTitle } from "../../../Components/HeaderInput/styled";
+import Button from "../../../Components/Button";
 import InputAdornment from '@material-ui/core/InputAdornment';
 import Visibility from '@material-ui/icons/Visibility';
- import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import IconButton from '@material-ui/core/IconButton';
 
 
@@ -31,8 +30,6 @@ const [state , setState] = useState({
 })
 
 //Funções para senha
-// const [hidenPassword, setHidenPassword] = useState(false)
-
 
 const [values, setValues] = React.useState({
 
@@ -53,9 +50,9 @@ const dispatch = useDispatch()
 let history = useHistory();
 
 function redirectSignUpFunction() {
-  // dispatch(push(routes.signup))
-  //  dispatch(Push("/signup"))
-  history.push('/signup')
+   dispatch(push(routes.signup))
+   // dispatch(push("/signup"))
+   // history.push('/signup')
 }
 //OnChange
 const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -68,16 +65,17 @@ const {name , value} = e.target
 //OnSubmit Form
 function onSubmit(e: FormEvent<HTMLFormElement>) {
      e.preventDefault()
-    dispatch(UserAction.login(state.form.email, state.form.password))
+    // dispatchlogin(
+    //   state.form.email, 
+    //   state.form.password
+    //   ))
  }
 
     return (
       
       <Container>
           < Section title="Entrar" />
-        
                 <Form onSubmit={onSubmit}>
-               
                   <TextFieldStyled   
                     name = "email"
                     type = "email"
@@ -89,8 +87,10 @@ function onSubmit(e: FormEvent<HTMLFormElement>) {
                     // pattern =  "[a-z0-9_.+-%]+@[a-z0-9.-]+\.[a-z]{3,}$" 
                     onChange={handleChange}
 
-                      variant="outlined"
-                      InputLabelProps = {{shrink:true}}   
+                    variant="outlined"
+                    InputLabelProps = {{shrink:true}}   
+
+                      
                   />
                   <TextFieldStyled
                     name = "password"
@@ -124,7 +124,6 @@ function onSubmit(e: FormEvent<HTMLFormElement>) {
                
                   />
                   <Button title="Entrar"/>
-             
                 </Form>
           
                 <DivTitle>
@@ -139,11 +138,8 @@ function onSubmit(e: FormEvent<HTMLFormElement>) {
     )
 
 }
-const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => {
-  bindActionCreators(UserAction, dispatch);
-};
-      
-export default connect(mapDispatchToProps, null)(Login);
+     
+export default Login;
 
 
 

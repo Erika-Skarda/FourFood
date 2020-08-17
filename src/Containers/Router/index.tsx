@@ -1,10 +1,11 @@
 import React from "react";
-import { ConnectedRouter } from "connected-react-router";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { ConnectedRouter } from 'connected-react-router';
+import { Switch, Route } from "react-router-dom";
 
 import SplashScreen from "../Pages/SplashScreen/index";
 import Login from "../Pages/LoginPage/index";
-import SignUp from '../Pages/SignUpPage/index'
+import SignUp from '../Pages/SignUpPage/index';
+import { History }from 'history';
 
 export const routes = {
   splashScreen: "/",
@@ -14,15 +15,24 @@ export const routes = {
   myadress:"/myadres"
 };
 
-function Router(props: { history: import("history").History<any> }) {
+interface Props {
+
+  history: History
+}
+
+function Router({history}:Props) {
+
   return (
-    <ConnectedRouter history={props.history}>
+  
+    <ConnectedRouter history={history}>  
+ 
       <Switch>
         {/* <Redirect strict from="/" to="/login" /> */}
         <Route exact path={routes.splashScreen} component={SplashScreen} />
         <Route exact path={routes.login} component={Login} />
         <Route exact path={routes.signup} component={SignUp} />
       </Switch>
+ 
     </ConnectedRouter>
   );
 }

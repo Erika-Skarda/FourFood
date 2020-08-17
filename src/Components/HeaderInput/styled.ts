@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled , { keyframes }from 'styled-components'
 import { TextField } from '@material-ui/core';
-import { jsx, css, keyframes } from '@emotion/core';
+// import { jsx, css, keyframes } from '@emotion/core';
 
 const bounce = keyframes`
   from, 20%, 53%, 80%, to {
@@ -25,7 +25,10 @@ export const Logo = styled.img `
     height: 3.625rem;
     object-fit: contain;
     margin-top: 5.5rem;
-    animation: ${bounce} 1s ease infinite;
+  
+      animation: ${bounce} 1s ease infinite;
+    
+    
 `
 export const SectionTitle = styled.h2 `
 
