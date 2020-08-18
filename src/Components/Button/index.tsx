@@ -10,7 +10,7 @@ const Button = (props:Props) => {
 
     return(
        
-       <ButtonStyled>           
+       <ButtonStyled type="submit">           
          
          {props.title}
     

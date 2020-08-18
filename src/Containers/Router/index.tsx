@@ -1,7 +1,7 @@
 import React from "react";
 import { ConnectedRouter } from 'connected-react-router';
 import { Switch, Route } from "react-router-dom";
-
+import { BrowserRouter } from "react-router-dom";
 import SplashScreen from "../Pages/SplashScreen/index";
 import Login from "../Pages/LoginPage/index";
 import SignUp from '../Pages/SignUpPage/index';
@@ -24,7 +24,7 @@ function Router({history}:Props) {
 
   return (
   
-    <ConnectedRouter history={history}>  
+    <BrowserRouter>  
  
       <Switch>
         {/* <Redirect strict from="/" to="/login" /> */}
@@ -33,7 +33,7 @@ function Router({history}:Props) {
         <Route exact path={routes.signup} component={SignUp} />
       </Switch>
  
-    </ConnectedRouter>
+    </BrowserRouter>
   );
 }
 

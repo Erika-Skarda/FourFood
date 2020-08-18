@@ -4,8 +4,7 @@ import { Action } from "redux";
 import { ThunkAction } from "redux-thunk";
 import { baseUrl, getToken} from "../Utils/constants"
 import axios from 'axios';
-
-
+import { Dispatch } from 'redux';
 
 //Redirecionamentos
 export const redirectLogin = () => async (
@@ -52,5 +51,24 @@ export const login = (
     // dispatch(setMessage("Não foi possivel criar cadastrar o usuário, tente novamente mais tarde !", "red"))
   }
 }
+export const singUp = (
+  name:string, 
+  email:string,
+  password:string,
+  cpf:string) => async(dispatch:Dispatch) => {
+  const body = {
+      name,
+      email,
+      password,
+      cpf
+  }
+   try {
+       const response = await axios.post(`${baseUrl}/signup`, body)
+       localStorage.setItem("token", response.data.token)
+          alert("Usuário cadastrado com sucesso!")
 
+   } catch {
+       alert("Ocorreu um erro inesperado. Tente novamente")
+   }
+}
 

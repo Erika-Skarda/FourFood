@@ -18,8 +18,7 @@ interface SignUpProps {
 interface User {
   email: string
   password: string
-  
-  
+
 }
 const SignUp: React.FC<SignUpProps> = () => {
 
@@ -97,7 +96,7 @@ const createNewUser = [
   {
     name: 'confirm',
     label: "Confirmar",
-    type: values.showPassword? 'text' : 'password',
+    type: values2.showPassword2? 'text' : 'password',
     placeholder: "Confirme a senha anterior",
     pattern: "[A-Za-z0-9]{6,10}",
     title: "Digite no mínimo 6 caracteres",
@@ -109,7 +108,7 @@ const createNewUser = [
             onMouseDown = {handleMouseDownPassword}
             edge = "end"
             >
-          {values.showPassword? 
+          {values2.showPassword2? 
           <VisibilityOff /> : <Visibility />}
         </IconButton>
       </InputAdornment>
@@ -124,7 +123,6 @@ const [formState, setFormInfo] = useState({
     password : "",
     confirm:""
   }
-
 })
 
 const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -140,32 +138,13 @@ const handleOnSubmit = (e: FormEvent<HTMLFormElement>) => {
         alert("Senhas divergentes. Tente novamente")
 
   } else {
-    // dispatch(UserAction.singUp(
-    //   formState.form.name,
-    //   formState.form.email, 
-    //   formState.form.cpf
-    //   formState.form.password, 
-    //   formState.form.confirm)
-  }
- 
+     dispatch(UserAction.singUp(
+       formState.form.name,
+       formState.form.email, 
+       formState.form.cpf,
+       formState.form.password))
+   }
 }
-//   const newUser = () => {
-   
-//     const [userName, setUserName] = useState<User>()
-
-//     useEffect(() => {
-     
-//         const name  = localStorage.getItem("userName")
-      
-//         setUserName(name)
-//     }, [ userName])
-
-//     return {
-     
-//         userName
-//     }
-// }
-
   return (
     <Container>
       <Section title="Cadastrar"/>
