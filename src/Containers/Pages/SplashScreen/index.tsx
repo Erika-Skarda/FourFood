@@ -2,18 +2,16 @@ import React, { Fragment, useEffect } from 'react';
 import { useDispatch  } from 'react-redux';
 import { push} from 'connected-react-router';
 import { WrapperSplashScreen } from './styled';
+import { useHistory } from "react-router-dom";
 
 function SplashScreen() {
 
-  let dispatch = useDispatch()
+
+  let history = useHistory();
 
   useEffect(() => {
-    setTimeout(() => dispatch(push("/login")), 3000);
-    // const timer = setTimeout(() => {
-    //   console.log("vai arrombado")
-    //   dispatch(push("/login"))
-    // }, 1000)
-    // return () => clearTimeout(timer)
+
+    setTimeout(() =>  history.push('/login'), 3000);
 
   }, []);
 

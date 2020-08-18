@@ -21,7 +21,6 @@ const App:React.FC = () => (
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <CssBaseline />
-        {/* <BrowserRouter />  */}
         <AppWrapper>
           <Router history={history} />
         </AppWrapper>
